@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://baugh6w1h1vi4"]
 
 [node name="Fish" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 522.0
+offset_bottom = 360.0
+text = "Add fish enemy next time
+THen worry about art"
