@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://j3ktaomhag8w"]
+[gd_scene load_steps=3 format=3 uid="uid://j3ktaomhag8w"]
 
 [ext_resource type="PackedScene" uid="uid://df1smrxqvv78f" path="res://Assets/Player.tscn" id="1_etuq1"]
+[ext_resource type="Script" path="res://Script/FishSpawner.gd" id="3_ookas"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_etuq1")]
-position = Vector2(565, 319)
+position = Vector2(553, 344)
+size = 10
+
+[node name="Fishspawner" type="Node" parent="."]
+script = ExtResource("3_ookas")

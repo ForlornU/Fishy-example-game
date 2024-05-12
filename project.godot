@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [display]
 
+window/size/resizable=false
 window/stretch/aspect="keep_width"
 window/stretch/scale_mode="integer"
 
