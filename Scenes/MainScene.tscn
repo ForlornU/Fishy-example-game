@@ -7,7 +7,6 @@
 
 [node name="Player" parent="." instance=ExtResource("1_etuq1")]
 position = Vector2(553, 344)
-size = 10
 
 [node name="Fishspawner" type="Node" parent="."]
 script = ExtResource("3_ookas")
