@@ -1,8 +1,0 @@
-ea4bc82a6ad023ab7ee23ee620429895
-::res://::1715350187
-icon.svg::CompressedTexture2D::8524933389817175482::1715348983::1715348997::1::::<><>::
-::res://Assets/::1715350130
-Player.tscn::PackedScene::7564995355455021727::1715350130::0::1::::<><>::res://Assets/PlayerMovement.gd<>uid://dtpsn38kujn1k::::res://icon.svg
-PlayerMovement.gd::GDScript::-1::1715350072::0::1::::<>Node<>::
-::res://Scenes/::1715349346
-MainScene.tscn::PackedScene::690143292049672192::1715349346::0::1::::<><>::
