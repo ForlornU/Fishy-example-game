@@ -2,8 +2,6 @@ extends Node
 
 const ENEMY_FISH = preload("res://Assets/EnemyFish.tscn")
 var max_fish_count = 10
-var startposleft = -300
-var startposright = 1500
 var spawn_rate = 1
 
 func spawn_fish():
@@ -24,10 +22,10 @@ func init_fish(fish : Fish):
 	var start_position : Vector2
 	#randomize x
 	if(random_side == 0):
-		start_position.x = startposleft
+		start_position.x = -200
 		fish.direction = Vector2(1,0)
 	else:
-		start_position.x = startposright
+		start_position.x = 1920 + 200
 		fish.direction = Vector2(-1,0)
 		
 	fish.move_speed = 2
