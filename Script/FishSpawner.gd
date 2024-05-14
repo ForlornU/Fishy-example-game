@@ -27,8 +27,11 @@ func init_fish(fish : Fish):
 	else:
 		start_position.x = 1920 + 200
 		fish.direction = Vector2(-1,0)
-		
-	fish.move_speed = 2
+	
+	fish.move_speed = randf_range(1, 3)
+	fish.size = randi_range(1, 99)
+	fish.text.text = str(fish.size)
+	
 	#randomize y
 	var random_y = randf_range(62, 685)
 	start_position.y = random_y

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://xmepqgruiu3g"]
+[gd_scene load_steps=5 format=3 uid="uid://xmepqgruiu3g"]
 
 [ext_resource type="Texture2D" uid="uid://dtpsn38kujn1k" path="res://icon.svg" id="1_00r2e"]
 [ext_resource type="Script" path="res://Assets/EnemyFish.gd" id="1_pi7jt"]
@@ -6,9 +6,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsme2"]
 size = Vector2(122, 122)
 
-[node name="EnemyFish" type="Area2D"]
-position = Vector2(503, 128)
+[sub_resource type="LabelSettings" id="LabelSettings_tl8ux"]
+font_size = 32
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="EnemyFish" type="Area2D" node_paths=PackedStringArray("text")]
 script = ExtResource("1_pi7jt")
+text = NodePath("Label")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0.945098, 0.133333, 0.392157, 1)
@@ -17,5 +22,23 @@ texture = ExtResource("1_00r2e")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_jsme2")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 67.0
+offset_right = 20.0
+offset_bottom = 112.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.02556)
+text = "0"
+label_settings = SubResource("LabelSettings_tl8ux")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

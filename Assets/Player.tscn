@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://df1smrxqvv78f"]
+[gd_scene load_steps=6 format=3 uid="uid://df1smrxqvv78f"]
 
 [ext_resource type="Script" path="res://Assets/PlayerMovement.gd" id="1_441f7"]
 [ext_resource type="Texture2D" uid="uid://dtpsn38kujn1k" path="res://icon.svg" id="1_nd670"]
@@ -8,9 +8,17 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ccnox"]
 size = Vector2(124, 125)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_body")]
+[sub_resource type="LabelSettings" id="LabelSettings_etbk2"]
+font_size = 32
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_body", "text")]
+position = Vector2(0, -1)
 script = ExtResource("1_441f7")
 player_body = NodePath(".")
+move_speed = 600.0
+text = NodePath("Label")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -24,3 +32,20 @@ shape = SubResource("RectangleShape2D_ccnox")
 
 [node name="temp_image" type="Sprite2D" parent="."]
 texture = ExtResource("1_nd670")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 88.0
+offset_right = 20.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "0"
+label_settings = SubResource("LabelSettings_etbk2")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -10,3 +10,12 @@ position = Vector2(553, 344)
 
 [node name="Fishspawner" type="Node" parent="."]
 script = ExtResource("3_ookas")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Death Screen
+Win-Screen
+Graphics
+Refactor
+"
