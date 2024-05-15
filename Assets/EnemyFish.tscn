@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" path="res://Assets/EnemyFish.gd" id="1_pi7jt"]
 [ext_resource type="Texture2D" uid="uid://dmvgrdqquqy1f" path="res://Assets/FishSpriteTeal.png" id="2_xpwao"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsme2"]
-size = Vector2(122, 122)
+[ext_resource type="PackedScene" uid="uid://drc5lkss2mq8p" path="res://Assets/fish_collider.tscn" id="3_aub2o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tl8ux"]
 font_size = 32
@@ -16,11 +14,8 @@ script = ExtResource("1_pi7jt")
 text = NodePath("Label")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.08, 0.08)
 texture = ExtResource("2_xpwao")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_jsme2")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
@@ -39,5 +34,9 @@ text = "0"
 label_settings = SubResource("LabelSettings_tl8ux")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="FishCollider" parent="." instance=ExtResource("3_aub2o")]
+position = Vector2(-3, -24)
+scale = Vector2(1, 1.016)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

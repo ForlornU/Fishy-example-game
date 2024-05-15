@@ -10,10 +10,9 @@ func _process(delta):
 	if(distance_traveled > distance_to_end):
 		queue_free()
 
-func _on_body_entered(body : Fish):
-	if(body.size > size):
+func _on_body_entered(player : Fish):
+	if(player.size > size):
 		queue_free()
-		body.size += 1
-		body.text.text = str(body.size)
+		player.grow()
 	else:
-		body.queue_free()
+		player.queue_free()

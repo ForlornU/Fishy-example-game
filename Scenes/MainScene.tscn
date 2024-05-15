@@ -1,9 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://j3ktaomhag8w"]
+[gd_scene load_steps=7 format=3 uid="uid://j3ktaomhag8w"]
 
 [ext_resource type="PackedScene" uid="uid://df1smrxqvv78f" path="res://Assets/Player.tscn" id="1_etuq1"]
 [ext_resource type="Script" path="res://Script/FishSpawner.gd" id="3_ookas"]
 
+[sub_resource type="Gradient" id="Gradient_h2d28"]
+colors = PackedColorArray(0.253011, 0.593359, 0.73774, 1, 0.549894, 0.940515, 0.965783, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cvqyv"]
+gradient = SubResource("Gradient_h2d28")
+
+[sub_resource type="Environment" id="Environment_ptus6"]
+background_mode = 3
+background_color = Color(0.206515, 0.519534, 0.72073, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_v8ctt"]
+
 [node name="Main" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(966, 408)
+rotation = -1.5708
+scale = Vector2(6.61103, -3639.7)
+texture = SubResource("GradientTexture1D_cvqyv")
 
 [node name="Player" parent="." instance=ExtResource("1_etuq1")]
 position = Vector2(678, 412)
@@ -12,10 +30,16 @@ position = Vector2(678, 412)
 script = ExtResource("3_ookas")
 
 [node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -163.0
+offset_top = 61.0
+offset_right = -59.0
+offset_bottom = 162.0
 text = "Death Screen
 Win-Screen
 Graphics
 Refactor
 "
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ptus6")
+camera_attributes = SubResource("CameraAttributesPractical_v8ctt")

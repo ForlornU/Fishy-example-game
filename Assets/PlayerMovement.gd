@@ -2,6 +2,9 @@ extends Fish
 @export var player_body : CharacterBody2D
 
 var edge_of_screen := Vector2(1920,1080)
+var eaten_fish = 0
+var growth_per_fish = 0.01
+var fish_scale = 1
 
 func _ready():
 	size = 25;
@@ -14,4 +17,14 @@ func _process(delta):
 
 	position.x = clampf(position.x, 0, edge_of_screen.x)
 	position.y = clampf(position.y, 0, edge_of_screen.y)
+	
+func grow():
+	eaten_fish+=1
+	size += 1
+	text.text = str(size)
+	fish_scale = min(fish_scale + growth_per_fish, 100)
+	player_body.scale = Vector2(fish_scale, fish_scale)
+	#prite.scale = Vector2(fish_scale, fish_scale)
+	#fish_collider.scale = Vector2(1+fish_scale, 1+fish_scale)#= clamp(sprite.scale + growth_per_fish, 0.08, 1)
+	pass
 
