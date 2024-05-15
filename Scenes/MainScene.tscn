@@ -6,7 +6,7 @@
 [node name="Main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_etuq1")]
-position = Vector2(553, 344)
+position = Vector2(678, 412)
 
 [node name="Fishspawner" type="Node" parent="."]
 script = ExtResource("3_ookas")

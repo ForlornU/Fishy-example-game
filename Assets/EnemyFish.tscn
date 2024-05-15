@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://xmepqgruiu3g"]
 
-[ext_resource type="Texture2D" uid="uid://dtpsn38kujn1k" path="res://icon.svg" id="1_00r2e"]
 [ext_resource type="Script" path="res://Assets/EnemyFish.gd" id="1_pi7jt"]
+[ext_resource type="Texture2D" uid="uid://dmvgrdqquqy1f" path="res://Assets/FishSpriteTeal.png" id="2_xpwao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jsme2"]
 size = Vector2(122, 122)
@@ -16,8 +16,7 @@ script = ExtResource("1_pi7jt")
 text = NodePath("Label")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(0.945098, 0.133333, 0.392157, 1)
-texture = ExtResource("1_00r2e")
+texture = ExtResource("2_xpwao")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
