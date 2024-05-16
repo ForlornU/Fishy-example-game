@@ -9,7 +9,6 @@ var direction : Vector2
 @export var sprite : Sprite2D
 
 func turn():
-	#sprite.flip_h = direction.x > 0
 	if(direction.x < 0):
 		sprite.flip_h = false
 	elif(direction.x > 0):
