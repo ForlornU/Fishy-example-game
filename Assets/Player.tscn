@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://df1smrxqvv78f"]
+[gd_scene load_steps=5 format=3 uid="uid://df1smrxqvv78f"]
 
 [ext_resource type="Script" path="res://Assets/PlayerMovement.gd" id="1_441f7"]
 [ext_resource type="Texture2D" uid="uid://cy7fhepq7lnav" path="res://Assets/FishSprite.png" id="2_bq4jx"]
-[ext_resource type="PackedScene" uid="uid://drc5lkss2mq8p" path="res://Assets/fish_collider.tscn" id="3_ka27w"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_etbk2"]
 font_size = 32
@@ -13,12 +12,13 @@ outline_color = Color(0, 0, 0, 1)
 radius = 22.0
 height = 120.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_body", "text")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_body", "text", "sprite")]
 position = Vector2(0, -1)
 script = ExtResource("1_441f7")
 player_body = NodePath(".")
 move_speed = 600.0
 text = NodePath("Label")
+sprite = NodePath("Sprite")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 7
@@ -36,8 +36,6 @@ text = "0"
 label_settings = SubResource("LabelSettings_etbk2")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="FishCollider" parent="." instance=ExtResource("3_ka27w")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

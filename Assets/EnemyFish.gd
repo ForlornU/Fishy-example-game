@@ -5,6 +5,7 @@ var distance_traveled : float = 0
 var distance_to_end = 1920 + 500
 
 func _process(delta):
+	turn()
 	position += direction * move_speed
 	distance_traveled += direction.length() * move_speed
 	if(distance_traveled > distance_to_end):

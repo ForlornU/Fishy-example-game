@@ -9,9 +9,10 @@ font_size = 32
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
-[node name="EnemyFish" type="Area2D" node_paths=PackedStringArray("text")]
+[node name="EnemyFish" type="Area2D" node_paths=PackedStringArray("text", "sprite")]
 script = ExtResource("1_pi7jt")
 text = NodePath("Label")
+sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.08, 0.08)

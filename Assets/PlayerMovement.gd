@@ -11,6 +11,7 @@ func _ready():
 	text.text = str(size)
 
 func _process(delta):
+	turn()
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()
 	player_body.velocity = direction * move_speed
 	player_body.move_and_slide()
@@ -24,7 +25,4 @@ func grow():
 	text.text = str(size)
 	fish_scale = min(fish_scale + growth_per_fish, 100)
 	player_body.scale = Vector2(fish_scale, fish_scale)
-	#prite.scale = Vector2(fish_scale, fish_scale)
-	#fish_collider.scale = Vector2(1+fish_scale, 1+fish_scale)#= clamp(sprite.scale + growth_per_fish, 0.08, 1)
-	pass
-
+	
