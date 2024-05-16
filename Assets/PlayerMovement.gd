@@ -12,14 +12,15 @@ func _ready():
 
 func _process(delta):
 	turn()
+	#Player movement and clamping position within window
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()
 	player_body.velocity = direction * move_speed
 	player_body.move_and_slide()
-
 	position.x = clampf(position.x, 0, edge_of_screen.x)
 	position.y = clampf(position.y, 0, edge_of_screen.y)
 	
 func grow():
+	#Grow when eating an enemy-fish
 	eaten_fish+=1
 	size += 1
 	text.text = str(size)

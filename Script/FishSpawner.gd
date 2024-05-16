@@ -10,6 +10,7 @@ func spawn_fish():
 	init_fish(newfish)
 	
 func _process(delta):
+	#Spawn a fish every x seconds
 	if(spawn_rate <= 0):
 		spawn_fish()
 		spawn_rate = 1
@@ -28,6 +29,7 @@ func init_fish(fish : Fish):
 		start_position.x = 1920 + 200
 		fish.direction = Vector2(-1,0)
 	
+	#Randomize fish values
 	fish.move_speed = randf_range(1, 3)
 	fish.size = randi_range(1, 99)
 	fish.text.text = str(fish.size)
