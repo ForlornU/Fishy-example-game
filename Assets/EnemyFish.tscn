@@ -14,7 +14,6 @@ height = 116.0
 
 [node name="EnemyFish" type="Area2D" node_paths=PackedStringArray("text", "sprite") groups=["enemy_fish"]]
 script = ExtResource("1_pi7jt")
-move_speed = null
 text = NodePath("Label")
 sprite = NodePath("Sprite2D")
 

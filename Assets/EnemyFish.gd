@@ -4,14 +4,14 @@ class_name EnemyFish
 var distance_traveled : float = 0
 var distance_to_end = 1920 + 500
 
-func init_fish():
+func init_fish(player_size : int):
 	#Randomize fish values
 	move_speed = randf_range(1, 3)
-	size = randi_range(1, 99)
+	var min_size = clamp(player_size - 15, 1, SizeManager.max_player_size-1)
+	var max_size = clamp(player_size + 15, 1, SizeManager.max_player_size-1)
+	size = randi_range(min_size, max_size)
 	text.text = str(size)
 	self.scale = SizeManager.determine_size(size)
-	#var fish_scale = min(size, 1)
-	#self.scale = Vector2(fish_scale, fish_scale)
 	turn() # Turn to face direction after spawning
 
 func _process(delta):

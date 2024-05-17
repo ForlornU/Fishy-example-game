@@ -19,7 +19,8 @@ func spawn_fish():
 	var newfish = ENEMY_FISH.instantiate()
 	add_child(newfish)
 	init_fish(newfish)
-	newfish.init_fish()
+	var player = get_tree().get_first_node_in_group("player") as Fish
+	newfish.init_fish(player.size)
 	
 func _process(delta):
 	#Spawn a fish every x seconds

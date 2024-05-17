@@ -2,14 +2,14 @@ extends Fish
 
 var player_body #: CharacterBody2D
 var edge_of_screen := Vector2(1920,1080)
-var eaten_fish = 0
 var growth_per_fish = 0.01
 var fish_scale = 1
 
 func _ready():
 	player_body = self
-	size = 25;
+	size = 5;
 	text.text = str(size)
+	self.scale = SizeManager.determine_size(size)
 
 func _process(delta):
 	turn()
@@ -22,9 +22,11 @@ func _process(delta):
 	
 func grow():
 	#Grow when eating an enemy-fish
-	eaten_fish+=1
 	size += 1
 	text.text = str(size)
-	fish_scale = min(fish_scale + growth_per_fish, 100)
-	player_body.scale = Vector2(fish_scale, fish_scale)
-	
+	var new_scale = SizeManager.determine_size(size)
+	#Animate grow effect
+	var tween = create_tween()
+	tween.tween_property(self, "scale", Vector2(new_scale.x + 0.1, new_scale.y + 0.1), 0.4)
+	tween.tween_property(self, "scale", new_scale, 0.4)
+
