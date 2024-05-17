@@ -1,12 +1,13 @@
 extends Fish
-@export var player_body : CharacterBody2D
 
+var player_body #: CharacterBody2D
 var edge_of_screen := Vector2(1920,1080)
 var eaten_fish = 0
 var growth_per_fish = 0.01
 var fish_scale = 1
 
 func _ready():
+	player_body = self
 	size = 25;
 	text.text = str(size)
 

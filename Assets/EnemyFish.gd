@@ -9,6 +9,9 @@ func init_fish():
 	move_speed = randf_range(1, 3)
 	size = randi_range(1, 99)
 	text.text = str(size)
+	self.scale = SizeManager.determine_size(size)
+	#var fish_scale = min(size, 1)
+	#self.scale = Vector2(fish_scale, fish_scale)
 	turn() # Turn to face direction after spawning
 
 func _process(delta):

@@ -12,10 +12,9 @@ outline_color = Color(0, 0, 0, 1)
 radius = 22.0
 height = 120.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_body", "text", "sprite") groups=["player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("text", "sprite") groups=["player"]]
 position = Vector2(0, -1)
 script = ExtResource("1_441f7")
-player_body = NodePath(".")
 move_speed = 600.0
 text = NodePath("Label")
 sprite = NodePath("Sprite")
