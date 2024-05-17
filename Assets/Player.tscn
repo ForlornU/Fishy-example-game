@@ -12,7 +12,7 @@ outline_color = Color(0, 0, 0, 1)
 radius = 22.0
 height = 120.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_body", "text", "sprite")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("player_body", "text", "sprite") groups=["player"]]
 position = Vector2(0, -1)
 script = ExtResource("1_441f7")
 player_body = NodePath(".")
@@ -37,11 +37,11 @@ label_settings = SubResource("LabelSettings_etbk2")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("2_bq4jx")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_mxfvp")
-
-[node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.08, 0.08)
-texture = ExtResource("2_bq4jx")

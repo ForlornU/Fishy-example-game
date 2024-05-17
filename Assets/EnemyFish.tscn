@@ -2,14 +2,17 @@
 
 [ext_resource type="Script" path="res://Assets/EnemyFish.gd" id="1_pi7jt"]
 [ext_resource type="Texture2D" uid="uid://dmvgrdqquqy1f" path="res://Assets/FishSpriteTeal.png" id="2_xpwao"]
-[ext_resource type="PackedScene" uid="uid://drc5lkss2mq8p" path="res://Assets/fish_collider.tscn" id="3_aub2o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tl8ux"]
 font_size = 32
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
-[node name="EnemyFish" type="Area2D" node_paths=PackedStringArray("text", "sprite")]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bi02o"]
+radius = 26.0
+height = 116.0
+
+[node name="EnemyFish" type="Area2D" node_paths=PackedStringArray("text", "sprite") groups=["enemy_fish"]]
 script = ExtResource("1_pi7jt")
 text = NodePath("Label")
 sprite = NodePath("Sprite2D")
@@ -36,8 +39,9 @@ label_settings = SubResource("LabelSettings_tl8ux")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FishCollider" parent="." instance=ExtResource("3_aub2o")]
-position = Vector2(-3, -24)
-scale = Vector2(1, 1.016)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_bi02o")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

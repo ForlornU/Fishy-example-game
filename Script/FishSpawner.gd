@@ -3,8 +3,7 @@ extends Node
 const ENEMY_FISH = preload("res://Assets/EnemyFish.tscn")
 const PLAYER_FISH = preload("res://Assets/Player.tscn")
 
-var max_fish_count = 10
-
+@export var max_fish_count = 10
 @export var spawn_rate := float(1)
 var spawn_timer = 0
 
@@ -20,10 +19,11 @@ func spawn_fish():
 	var newfish = ENEMY_FISH.instantiate()
 	add_child(newfish)
 	init_fish(newfish)
+	newfish.init_fish()
 	
 func _process(delta):
 	#Spawn a fish every x seconds
-	if(spawn_timer <= 0):
+	if(spawn_timer <= 0 and get_tree().get_nodes_in_group("enemy_fish").size() < max_fish_count):
 		spawn_fish()
 		spawn_timer = spawn_rate
 	else:
@@ -41,13 +41,8 @@ func init_fish(fish : Fish):
 		start_position.x = 1920 + 200
 		fish.direction = Vector2(-1,0)
 	
-	#Randomize fish values
-	fish.move_speed = randf_range(1, 3)
-	fish.size = randi_range(1, 99)
-	fish.text.text = str(fish.size)
-	
 	#randomize y
-	var random_y = randf_range(62, 685)
+	var random_y = randf_range(20, 1060) #20 pixel margin
 	start_position.y = random_y
 	fish.position = start_position
 
