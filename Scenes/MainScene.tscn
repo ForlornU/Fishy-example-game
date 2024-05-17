@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://j3ktaomhag8w"]
+[gd_scene load_steps=6 format=3 uid="uid://j3ktaomhag8w"]
 
-[ext_resource type="PackedScene" uid="uid://df1smrxqvv78f" path="res://Assets/Player.tscn" id="1_etuq1"]
 [ext_resource type="Script" path="res://Script/FishSpawner.gd" id="3_ookas"]
 
 [sub_resource type="Gradient" id="Gradient_h2d28"]
@@ -23,17 +22,15 @@ rotation = -1.5708
 scale = Vector2(6.61103, -3639.7)
 texture = SubResource("GradientTexture1D_cvqyv")
 
-[node name="Player" parent="." instance=ExtResource("1_etuq1")]
-position = Vector2(678, 412)
-
 [node name="Fishspawner" type="Node" parent="."]
 script = ExtResource("3_ookas")
+spawn_rate = 0.8
 
 [node name="Label" type="Label" parent="."]
-offset_left = -163.0
+offset_left = -383.0
 offset_top = 61.0
-offset_right = -59.0
-offset_bottom = 162.0
+offset_right = -25.0
+offset_bottom = 188.0
 text = "All fish needs their sizes set at start, manager?
 Death Screen
 Win-Screen

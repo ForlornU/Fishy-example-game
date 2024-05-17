@@ -1,8 +1,20 @@
 extends Node
 
 const ENEMY_FISH = preload("res://Assets/EnemyFish.tscn")
+const PLAYER_FISH = preload("res://Assets/Player.tscn")
+
 var max_fish_count = 10
-var spawn_rate = 1
+
+@export var spawn_rate := float(1)
+var spawn_timer = 0
+
+func _ready():
+	spawn_player()
+	
+func spawn_player():
+	var player_fish = PLAYER_FISH.instantiate()
+	add_child(player_fish)
+	player_fish.position = Vector2(960, 540) # Centre of screen
 
 func spawn_fish():
 	var newfish = ENEMY_FISH.instantiate()
@@ -11,11 +23,11 @@ func spawn_fish():
 	
 func _process(delta):
 	#Spawn a fish every x seconds
-	if(spawn_rate <= 0):
+	if(spawn_timer <= 0):
 		spawn_fish()
-		spawn_rate = 1
+		spawn_timer = spawn_rate
 	else:
-		spawn_rate -= delta
+		spawn_timer -= delta
 
 #TODO Take window size into account when calculating starting position
 func init_fish(fish : Fish):
