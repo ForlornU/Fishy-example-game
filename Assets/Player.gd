@@ -8,9 +8,7 @@ var fish_scale = 1
 
 func _ready():
 	player_body = self
-	size = 5;
-	text.text = str(size)
-	self.scale = SizeManager.determine_size(size)
+	start()
 
 func _process(delta):
 	turn()
@@ -33,6 +31,13 @@ func grow():
 	
 func die():
 	player_died.emit()
-	set_process(false)
-	hide()
+	queue_free()
+	GameManager.game_over()
+	
+func start():
+	show()
+	set_process(true)
+	size = 5;
+	text.text = str(size)
+	self.scale = SizeManager.determine_size(size)
 
