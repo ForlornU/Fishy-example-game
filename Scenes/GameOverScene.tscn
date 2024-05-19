@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dcbmobp844632"]
 
-[ext_resource type="Script" path="res://Scenes/GameOverScript.gd" id="1_8owi8"]
+[ext_resource type="Script" path="res://Script/GameOverScript.gd" id="1_5depg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xnhfr"]
 font_size = 32
@@ -15,7 +15,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_8owi8")
+script = ExtResource("1_5depg")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1

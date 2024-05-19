@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SizeManager="*res://Script/size_manager.gd"
+SizeManager="*res://Script/SizeCalculator.gd"
 GameManager="*res://Script/GameManager.gd"
 
 [display]
@@ -29,6 +29,14 @@ window/stretch/mode="viewport"
 [dotnet]
 
 project/assembly_name="Fishy"
+
+[file_customization]
+
+folder_colors={
+"res://Art/": "red",
+"res://Scenes/": "green",
+"res://Script/": "blue"
+}
 
 [input]
 

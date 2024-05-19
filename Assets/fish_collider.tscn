@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://drc5lkss2mq8p"]
-
-[node name="FishCollider" type="CollisionPolygon2D"]
-position = Vector2(-1, -24)
-polygon = PackedVector2Array(0, 0, -21, 0, -48, 9, -60, 24, -55, 37, -41, 47, -4, 54, 35, 48, 70, 24, 36, 5, 8, 0)

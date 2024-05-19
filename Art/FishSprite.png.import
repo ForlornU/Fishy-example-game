@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmvgrdqquqy1f"
-path="res://.godot/imported/FishSpriteTeal.png-522a655fddd2ef16c649ce06cf9a19a7.ctex"
+uid="uid://cy7fhepq7lnav"
+path="res://.godot/imported/FishSprite.png-ac1e96733dd19a8223cce1f44dfe073d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/FishSpriteTeal.png"
-dest_files=["res://.godot/imported/FishSpriteTeal.png-522a655fddd2ef16c649ce06cf9a19a7.ctex"]
+source_file="res://Art/FishSprite.png"
+dest_files=["res://.godot/imported/FishSprite.png-ac1e96733dd19a8223cce1f44dfe073d.ctex"]
 
 [params]
 

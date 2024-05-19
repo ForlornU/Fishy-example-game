@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://df1smrxqvv78f"]
 
-[ext_resource type="Script" path="res://Assets/Player.gd" id="1_yaca2"]
-[ext_resource type="Texture2D" uid="uid://cy7fhepq7lnav" path="res://Assets/FishSprite.png" id="2_bq4jx"]
+[ext_resource type="Script" path="res://Scenes/Player/Player.gd" id="1_lqb5t"]
+[ext_resource type="Texture2D" uid="uid://cy7fhepq7lnav" path="res://Art/FishSprite.png" id="2_i7acr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_etbk2"]
 font_size = 32
@@ -14,7 +14,7 @@ height = 120.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("text", "sprite") groups=["player"]]
 position = Vector2(0, -1)
-script = ExtResource("1_yaca2")
+script = ExtResource("1_lqb5t")
 move_speed = 600.0
 text = NodePath("Label")
 sprite = NodePath("Sprite")
@@ -38,7 +38,7 @@ vertical_alignment = 1
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.08, 0.08)
-texture = ExtResource("2_bq4jx")
+texture = ExtResource("2_i7acr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
