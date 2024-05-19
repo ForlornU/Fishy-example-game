@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://df1smrxqvv78f"]
 
-[ext_resource type="Script" path="res://Assets/PlayerMovement.gd" id="1_441f7"]
+[ext_resource type="Script" path="res://Assets/Player.gd" id="1_yaca2"]
 [ext_resource type="Texture2D" uid="uid://cy7fhepq7lnav" path="res://Assets/FishSprite.png" id="2_bq4jx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_etbk2"]
@@ -14,7 +14,7 @@ height = 120.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("text", "sprite") groups=["player"]]
 position = Vector2(0, -1)
-script = ExtResource("1_441f7")
+script = ExtResource("1_yaca2")
 move_speed = 600.0
 text = NodePath("Label")
 sprite = NodePath("Sprite")

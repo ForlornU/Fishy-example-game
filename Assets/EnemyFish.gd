@@ -30,4 +30,4 @@ func _on_body_entered(player : Fish):
 		queue_free()
 		player.grow()
 	else:
-		player.queue_free()
+		player.die()

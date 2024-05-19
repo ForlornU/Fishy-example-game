@@ -2,7 +2,6 @@ extends Node
 
 const ENEMY_FISH = preload("res://Assets/EnemyFish.tscn")
 const PLAYER_FISH = preload("res://Assets/Player.tscn")
-
 @export var max_fish_count = 10
 @export var spawn_rate := float(1)
 var spawn_timer = 0
@@ -14,6 +13,7 @@ func spawn_player():
 	var player_fish = PLAYER_FISH.instantiate()
 	add_child(player_fish)
 	player_fish.position = Vector2(960, 540) # Centre of screen
+	player_fish.player_died.connect(disable_spawning)
 
 func spawn_fish():
 	var newfish = ENEMY_FISH.instantiate()
@@ -47,4 +47,5 @@ func init_fish(fish : Fish):
 	start_position.y = random_y
 	fish.position = start_position
 
-	
+func disable_spawning():
+	set_process(false)

@@ -1,5 +1,6 @@
 extends Fish
 
+signal player_died
 var player_body #: CharacterBody2D
 var edge_of_screen := Vector2(1920,1080)
 var growth_per_fish = 0.01
@@ -29,4 +30,9 @@ func grow():
 	var tween = create_tween()
 	tween.tween_property(self, "scale", Vector2(new_scale.x + 0.1, new_scale.y + 0.1), 0.4)
 	tween.tween_property(self, "scale", new_scale, 0.4)
+	
+func die():
+	player_died.emit()
+	set_process(false)
+	hide()
 
