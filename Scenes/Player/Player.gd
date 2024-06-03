@@ -1,24 +1,31 @@
 extends Fish
 
 signal player_died
-var player_body #: CharacterBody2D
+@export var player_body : CharacterBody2D
 var edge_of_screen := Vector2(1920,1080)
 var growth_per_fish = 0.01
 var fish_scale = 1
+var fish_velocity : Vector2
+@export var acceleration = 10
 
 func _ready():
 	super()
-	player_body = self
 	start()
 
 func _physics_process(delta):
 	turn()
-	#Player movement and clamping position within window
+	move_player(delta) #Player movement
+	position.x = clampf(position.x, 0, edge_of_screen.x) #Clamp within border window
+	position.y = clampf(position.y, 0, edge_of_screen.y) #Clamp within border window
+	
+func move_player(delta):
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()
-	player_body.velocity = direction * move_speed
+	if(direction == Vector2.ZERO):
+		fish_velocity = fish_velocity.move_toward(Vector2.ZERO, acceleration * delta)
+	else:
+		fish_velocity = fish_velocity.move_toward(direction * move_speed, acceleration * delta)
+	player_body.velocity = fish_velocity
 	player_body.move_and_slide()
-	position.x = clampf(position.x, 0, edge_of_screen.x)
-	position.y = clampf(position.y, 0, edge_of_screen.y)
 	
 func grow():
 	#Grow when eating an enemy-fish
