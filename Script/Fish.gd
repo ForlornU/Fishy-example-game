@@ -8,6 +8,13 @@ var size : int
 var direction : Vector2
 @export var text : Label
 @export var sprite : Sprite2D
+@export var debug = false
+
+func _ready():
+	if(debug == true):
+		text.visible = true
+	else:
+		text.visible = false
 
 func turn():
 	#Turn based on our current direction, look left or right

@@ -7,10 +7,11 @@ var growth_per_fish = 0.01
 var fish_scale = 1
 
 func _ready():
+	super()
 	player_body = self
 	start()
 
-func _process(delta):
+func _physics_process(delta):
 	turn()
 	#Player movement and clamping position within window
 	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()
