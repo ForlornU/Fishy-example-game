@@ -22,10 +22,10 @@ func _process(delta):
 		queue_free()
 
 func _on_body_entered(player : Fish):
-	#What happens when colliding with player.
-	if(not player.is_in_group("player")):
+	if(not player.is_in_group("player")): #Early exit if not player
 		return
 		
+	#What happens when colliding with player.
 	if(player.size > size):
 		queue_free()
 		player.grow()

@@ -1,8 +1,9 @@
 extends Node
+
 const ENEMY_FISH = preload("res://Scenes/Enemy/EnemyFish.tscn")
 const PLAYER_FISH = preload("res://Scenes/Player/Player.tscn")
 @export var max_fish_count = 10
-@export var spawn_rate := float(1)
+@export var spawn_rate = float(1)
 var spawn_timer = 0
 
 func _ready():
