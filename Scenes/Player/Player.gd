@@ -19,7 +19,7 @@ func _physics_process(delta):
 	position.y = clampf(position.y, 0, edge_of_screen.y) #Clamp within border window
 	
 func move_player(delta):
-	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down").normalized()
+	direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	if(direction == Vector2.ZERO):
 		fish_velocity = fish_velocity.move_toward(Vector2.ZERO, acceleration * delta)
 	else:
