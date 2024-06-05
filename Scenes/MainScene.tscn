@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://j3ktaomhag8w"]
+[gd_scene load_steps=4 format=3 uid="uid://j3ktaomhag8w"]
 
 [ext_resource type="Script" path="res://Script/FishSpawner.gd" id="3_ookas"]
 
@@ -7,12 +7,6 @@ colors = PackedColorArray(0.253011, 0.593359, 0.73774, 1, 0.549894, 0.940515, 0.
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_cvqyv"]
 gradient = SubResource("Gradient_h2d28")
-
-[sub_resource type="Environment" id="Environment_ptus6"]
-background_mode = 3
-background_color = Color(0.206515, 0.519534, 0.72073, 1)
-
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_v8ctt"]
 
 [node name="Main" type="Node2D"]
 
@@ -25,19 +19,3 @@ texture = SubResource("GradientTexture1D_cvqyv")
 [node name="Fishspawner" type="Node" parent="."]
 script = ExtResource("3_ookas")
 spawn_rate = 0.1
-
-[node name="Label" type="Label" parent="."]
-offset_left = -383.0
-offset_top = 61.0
-offset_right = -25.0
-offset_bottom = 188.0
-text = "All fish needs their sizes set at start, manager?
-Death Screen
-Win-Screen
-Graphics
-Refactor
-"
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_ptus6")
-camera_attributes = SubResource("CameraAttributesPractical_v8ctt")
