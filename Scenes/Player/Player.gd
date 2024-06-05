@@ -3,13 +3,11 @@ extends Fish
 signal player_died
 @export var player_body : CharacterBody2D
 var edge_of_screen := Vector2(1920,1080)
-var growth_per_fish = 0.01
-var fish_scale = 1
 var fish_velocity : Vector2
 @export var acceleration = 10
 
 func _ready():
-	super()
+	super() #Calls the _ready() on fish.gd
 	start()
 
 func _physics_process(delta):
@@ -39,9 +37,10 @@ func grow():
 	
 func die():
 	player_died.emit()
-	queue_free()
+	queue_free() # Remove after this frame
 	GameManager.game_over()
 	
+#Called once on start to init
 func start():
 	show()
 	set_process(true)
