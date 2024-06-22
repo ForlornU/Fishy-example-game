@@ -1,6 +1,6 @@
 # Fishy Game Template for Godot
 
-//Screenshots here
+![alt text](https://github.com/ForlornU/Images/blob/main/FishyScreenshot1.png)
 
 A starter/template project inspired by the classic flash game "Fishy". Built with Godot Engine version 4.2.1 and serves as a resource for other developers to use and learn from. In this game, you control a fish using the WASD or arrow keys. Your goal is to avoid larger fish and eat smaller fish to grow. As you grow, you will eventually reach a size where you can win the game.
 
@@ -13,8 +13,6 @@ A starter/template project inspired by the classic flash game "Fishy". Built wit
 - Tween animations for smooth transitions and effects
 
 ## Getting Started
-
-### Prerequisites
 
 - Godot Engine 4.2.1 or higher
 
@@ -38,4 +36,5 @@ https://www.buymeacoffee.com/forlornu
 
 Enjoy developing with this template, and happy coding!
 
-![Godot Engine](https://godotengine.org/themes/godotengine/assets/download/logo_godot.png)  <!-- Optional: Add a Godot logo -->
+![alt text](https://github.com/ForlornU/Images/blob/main/FishyScreenshot2.png)
+
