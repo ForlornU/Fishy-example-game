@@ -20,9 +20,9 @@ A starter/template project inspired by the classic flash game "Fishy". Built wit
 
 1. **Clone the repository:**
 2. **Open the project in Godot:**
-    - Launch Godot Engine.
-    - Click on the "Import" button.
-    - Navigate to the cloned repository folder and select the `project.godot` file.
+	- Launch Godot Engine.
+	- Click on the "Import" button.
+	- Navigate to the cloned repository folder and select the `project.godot` file.
 
 ## License
 
