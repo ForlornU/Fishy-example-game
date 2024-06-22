@@ -36,5 +36,8 @@ https://www.buymeacoffee.com/forlornu
 
 Enjoy developing with this template, and happy coding!
 
+My other Godot starter project:
+https://github.com/ForlornU/TopdownStarter
+
 ![alt text](https://github.com/ForlornU/Images/blob/main/FishyScreenshot2.png)
 
