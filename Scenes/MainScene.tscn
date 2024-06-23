@@ -11,23 +11,11 @@ gradient = SubResource("Gradient_h2d28")
 [node name="Main" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(966, 408)
+position = Vector2(953.401, 550.371)
 rotation = -1.5708
-scale = Vector2(6.61103, -3639.7)
+scale = Vector2(4.55379, -2067.32)
 texture = SubResource("GradientTexture1D_cvqyv")
 
 [node name="Fishspawner" type="Node" parent="."]
 script = ExtResource("3_ookas")
 spawn_rate = 0.1
-
-[node name="Node" type="Node" parent="."]
-
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="Node3D" type="Node3D" parent="."]
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
