@@ -30,14 +30,16 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 For any questions or feedback, please contact me at forlornuploader@gmail.com
-Created by ForlornU
-Consider making me work faster with a coffee:
-https://www.buymeacoffee.com/forlornu
-
-Enjoy developing with this template, and happy coding!
 
 My other Godot starter project:
 https://github.com/ForlornU/TopdownStarter
+
+Consider making me work faster with a coffee:
+https://www.buymeacoffee.com/forlornu
+
+Created by ForlornU
+Enjoy developing with this template, and happy coding!
+
 
 ![alt text](https://github.com/ForlornU/Images/blob/main/FishyScreenshot2.png)
 
