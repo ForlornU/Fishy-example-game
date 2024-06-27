@@ -2,7 +2,6 @@ extends Node2D
 class_name Fish
 
 #Base class for all fish, player and enemy
-
 var starting_position : Vector2
 var size : int
 var direction : Vector2
